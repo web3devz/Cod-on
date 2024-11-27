@@ -64,7 +64,7 @@ export async function GET(request: Request) {
     console.log(`Obtained bytecode ${bytecode}`);
 
     //@ts-ignore
-    const deployInfo = await contract.$deploy([ 'ak_28gvDBQkwSjJEFLP5fU5a2tz6ctfyw5hzC2hXeUZ7cPkGkq5xL', '10', '1' ]);
+    const deployInfo = await contract.$deploy(args);
     console.log(`Contract deployed at ${deployInfo.address}`);
 
     return NextResponse.json({ address: deployInfo.address });
